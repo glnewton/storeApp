@@ -6,7 +6,9 @@ const itemSchema = new mongoose.Schema({
     image: {type: String, required: true},
     sku: {type: String, required: true},
     color: {type: String, required: false},
+    description: {type: String, required: false},
     quantity: {type: Number, required: false},
+    price: {type: Number, required: false},
     inStock: {type: Boolean, required: true},
 })
 

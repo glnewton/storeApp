@@ -9,11 +9,10 @@ const Item = require("./models/item.js");
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI
 
-
 // Express Configuration
 
 const app = express();
-      //app.use('/public', express.static('public')) ----use stylesheets?
+      // app.use('/public', express.static('public')) 
       app.use(methodOverride("_method"));
       app.use(express.urlencoded({ extended: false }));
       app.set("view engine", "jsx");
@@ -67,7 +66,7 @@ app.get("/items/seed", (req, res) => {
 });
 // Root 
 app.get('/', function(req, res){
-    res.send('Server is live!');
+    res.render("Home");
 });
 // Index = Show all records
 app.get('/items', (req, res) => {
