@@ -86,11 +86,11 @@ Run the following code in your terminal to download the code:
 
 ## Acknowledgements
 
-- Inspired by the Plants vs Zombie videogame franchise from PopCap Games, a susidiary of Electronic Arts (EA)
+- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs
 
-- Image and audio assets used from the following open source repository per "The Changjiang River License"
+- https://github.com/mdn/express-locallibrary-tutorial
 
-- https://github.com/jiangnangame/New-Plants-vs-Zombies-JavaScript/blob/master/LICENSE-ENGLISH.md
+- https://github.com/Viveckh/Veniqa
 
 - To Cycle 28
 

@@ -5,7 +5,6 @@ const path = require("path");
 const createError = require("http-errors");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 
 const indexRouter = require("./routes/index");
@@ -14,7 +13,11 @@ const Item = require("./models/item.js");
 
 // Global Configuration Variables 
 const PORT = process.env.PORT || 3000;
-const MONGO_URI = process.env.MONGO_URI
+
+// Establish Database Connection
+
+const db = require('./database/dbConnection');
+db.dbConnection();
 
 // Express Configuration
 
@@ -35,43 +38,14 @@ app.use(cookieParser());
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 // app.use('/public', express.static('public')) 
-app.use(express.static(path.join(__dirname, "public")));  // Keep?
+// app.use(express.static(path.join(__dirname, "public")));  // Keep?
 
 // Routes Configuration
 
 // app.use("/", indexRouter);
 // app.use("/users", usersRouter);
 
-// Error Handling Configuration
 
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  next(createError(404));
-});
-
-// error handler
-app.use((err, req, res, next) => {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
-  // render the error page
-  res.status(err.status || 500);
-  res.render("error");
-});
-
-// Mongoose Configuration
-
-mongoose.connect(MONGO_URI);
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-mongoose.set('strictQuery', true);
-const db = mongoose.connection;
-db.once('open', ()=> {
-    console.log('Connected to MongoDB')
-})
-// Connection Error/Success -- Define callback functions for various events
-db.on("error", (err) => console.log(err.message + " is mongod not running?"));
-db.on("open", () => console.log("mongo connected: ", MONGO_URI))
-db.on("close", () => console.log("mongo disconnected"))
 
 
 // Seed route - populate the database for testing
@@ -174,6 +148,23 @@ app.get("/items/:indexOfItemsArray", function (req, res) {
 });
 app.listen(PORT, () => {
   console.log("listening");
+});
+
+// Error Handling Configuration
+
+//catch 404 and forward to error handler
+app.use((req, res, next) => {
+  next(createError(404));
+});
+
+// error handler
+app.use((err, req, res, next) => {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
 });
 
 module.exports = app;
