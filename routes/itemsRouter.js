@@ -1,69 +1,16 @@
-/////////////////////////////////////////////////////
-// Dependencies & Imports
-/////////////////////////////////////////////////////
-require("dotenv").config();
 const express = require("express");
-const path = require("path");
-const createError = require("http-errors");
-const cookieParser = require("cookie-parser");
-const logger = require("morgan");
-const methodOverride = require("method-override");
+const router = express.Router();
 
-const indexRouter = require("./routes/index");
-// const itemsRouter = require("./routes/itemsRoutes");
-
-const Item = require("./models/item.js");
-
-// Global Configuration Variables 
-const PORT = process.env.PORT || 3000;
-
-// Establish Database Connection
-
-const db = require('./database/dbConnection');
-db.dbConnection();
-
-// Express Configuration
-
-const app = express();
-
-// View Engine Configuration --  Configure the app (app.set)
-app.set("views", path.join(__dirname, "views")); // Keep?
-app.set("view engine", "jsx");
-app.engine("jsx", require("express-react-views").createEngine());
-
-/////////////////////////////////////////////////////
-// Middleware Configuration - Mount Middleware (app.use)
-/////////////////////////////////////////////////////
-app.use(logger("dev"));     //logging
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(methodOverride("_method"));         // override for put and delete requests from forms
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static("public")); // serve files from public statically
-// app.use('/public', express.static('public')) 
-// app.use(express.static(path.join(__dirname, "public")));  // Keep?
-//app.use(express.static(__dirname + '/public'))
-
-
-////////////////////////////////////////////
-// Routes Configuration - Mount Routes 
-////////////////////////////////////////////
-// Home/Root/Index Route
-
-app.use("/", indexRouter);
-
-//app.use("/items", indexRouter); // Add items routes to middleware chain.
 
 
 // Index = Show all records
-app.get('/items', (req, res) => {
+router.get('/items', (req, res) => {
     Item.find({}, (err, allItems) => {
         res.render('Index', { items : allItems});
     });
 });
 // New - Get a form to create a new record
-app.get("/items/new", (req, res) => {
+router.get("/items/new", (req, res) => {
     res.render("New");
 });
 // Delete - Delete this one record
@@ -106,7 +53,7 @@ app.post("/items/create", (req, res) => {
   });
 });
 // Edit - Get the form with the record to update
-app.get("/items/:id/edit", (req, res) => {
+app.router("/items/:id/edit", (req, res) => {
   Item.findById(req.params.id, (err, foundItem) => {
     //find the item
     if (!err) {
@@ -119,7 +66,7 @@ app.get("/items/:id/edit", (req, res) => {
   });
 });
 // Show - Show me a particular record
-app.get("/items/:id", function (req, res) {
+app.router("/items/:id", function (req, res) {
   Item.findById(req.params.id, (err, foundItem) => {
     res.render("Show", {
       item: foundItem,
@@ -127,7 +74,7 @@ app.get("/items/:id", function (req, res) {
   });
 });
 // Seed - populate the database for testing
-app.get("/items/seed", (req, res) => {
+app.router("/items/seed", (req, res) => {
   Item.create(
     [
       {
@@ -167,37 +114,4 @@ app.get("/items/seed", (req, res) => {
   );
 });
 
-//////////////////////////////////////////////
-// Error Handling Configuration
-//////////////////////////////////////////////
-
-//catch 404 and forward to error handler
-app.use((req, res, next) => {
-  next(createError(404));
-});
-
-// error handler
-app.use((err, req, res, next) => {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
-  // render the error page
-  res.status(err.status || 500);
-  res.render("error");
-});
-
-
-//////////////////////////////////////////////
-// Server Listener
-//////////////////////////////////////////////
-app.listen(PORT, () => {
-  console.log("listening");
-});
-
-module.exports = app;
-
-
-
-
-
-
+//module.exports = router;

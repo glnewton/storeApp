@@ -1,0 +1,28 @@
+## Requirements
+
+- [ ] *MVP* - Minimum Viable Product Your App Must Posess All 7 RESTful Routes
+- [ ] *Index Page*: Your app should have an index page where
+    - all the products are displayed
+    - the images link to the product's show page
+    - and there should be a link to add a new product.
+- [ ] *Show Page*: Your show page should display a product with
+    - a link back to the products
+    - a link to edit the product (goes to the edit page)
+    - a delete button that deletes
+    - If the quantity of your item is zero, the show page should say 'OUT OF STOCK' instead of saying how many are remaining. (Hint: conditionals in jsx).
+    - On the edit page, make sure you can set the quantity to zero if you want so that you can test if this is working.
+    - The BUY button should also not be rendered if the quantity of the item is zero
+- [ ] *New  Page*:
+    - Render forms and submit to the appropriate routes.
+- [ ] *Edit  Page*:
+    - Render forms and submit to the appropriate routes.
+- [ ] *Redirects*
+    - The create route should redirect to the index
+    - The delete route should redirect to the index
+    - The update route will redirect back to the product's show page.
+- [ ] Technical Requirements:
+    - Your app MUST run without syntax errors. If there are errors you can't solve, comment them out and leave a comment above explaining what is wrong
+    - Must contain all 7 Restful Routes.
+    - Must be styled and look like a store.
+    - You MUST have a well documented README file in your repo. PLEASE add this README.md file on your own NOT through GitHub... Trust me...  
+    - In lieu of presentations, you MUST create a video (on YouTube, Vimeo, etc...) of you showcasing your application and code. This video needs to be in your README file, and must be at least 3 minutes long.
