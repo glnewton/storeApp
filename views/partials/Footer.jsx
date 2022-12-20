@@ -2,7 +2,11 @@ const React = require("react");
 
 class Footer extends React.Component {
   render() {
-    return <footer>Footer Stuff</footer>;
+    return (
+    <footer>
+      Conditions of Use | Privacy Notice <br/>
+      © 2022, Tienda Del Amazonas, Inc. or its affiliates
+    </footer>);
   }
 }
 

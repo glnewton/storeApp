@@ -5,6 +5,12 @@ class New extends React.Component {
   render() {
     return (
       <Default title="Home Page">
+        <div className="banner">
+          <img
+            src="https://c8.alamy.com/comp/2C94609/online-shopping-web-banner-template-design-flat-design-style-online-shopping-web-banner-vector-illustration-design-2C94609.jpg"
+            alt="banner image"
+          />
+        </div>
         <div className="homePage container">
           <h2>Welcome!</h2>
           <p>

@@ -64,8 +64,30 @@ footer {
     bottom: 0;
 }
 
-/* .homePage {
-  background-color: lightgrey;
+/* .homePage {} */
+
+.banner {
+width: 100%;
+height: 40%;
+}
+  
+.banner img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+/* .showItemPage {} */
+
+.inventoryPage {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.editItemPage,
+.addNewItemPage {
+  background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -73,22 +95,62 @@ footer {
   width: 22vw;
   height: auto;
   border-radius: 10px;
-} */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
 
-/* .showItemPage {
-  background-color: lightgrey;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 22vw;
-  height: auto;
-  border-radius: 10px;
-} */
+.editItemPage:hover,
+.addNewItemPage:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 
-.addNewItemPage,
-.editItemPage {
-    background-color: lightgrey;
+.editItemForm,
+.addNewItemForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.editItemForm h3, 
+.editItemForm h5, 
+.addNewItemForm h3,
+.addNewItemForm h5 {
+    margin-bottom: 20px;
+}
+
+.editItemForm form,
+.addNewItemForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.editItemForm input[type="text"],
+.addNewItemForm input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 12px;
+    width: 100%;
+}
+
+.editItemForm input[type="submit"],
+.addNewItemForm input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+}
+.editItemForm input[type="submit"]:hover,
+.addNewItemForm input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* .editItemPage {
+    background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -96,13 +158,27 @@ footer {
     width: 22vw;
     height: auto;
     border-radius: 10px;
-}
-
-.inventoryPage {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .editItemForm {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .editItemForm h3,
+  .editItemForm h5 {
+    text-align: center;
+  } */
+
+
+
 
 .itemCard {
     background-color: #25b5af;
@@ -111,15 +187,34 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 20px;
+    padding: 20px;
     border: 1px solid black;
     border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.addNewItemForm, .editItemForm {
+.itemCard img {
+    width: 15vw;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+ /* .editItemForm {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
+
+
+
+
+
+
+
+
+
+
 
 
 .back-button {
