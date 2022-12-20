@@ -40,10 +40,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride("_method"));         // override for put and delete requests from forms
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static("public")); // serve files from public statically
-// app.use('/public', express.static('public')) 
+//app.use(express.static("public")); // serve files from public statically
+//app.use('/public', express.static('public')) 
 // app.use(express.static(path.join(__dirname, "public")));  // Keep?
-//app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'))
 
 
 ////////////////////////////////////////////
@@ -131,7 +131,7 @@ app.get("/items/seed", (req, res) => {
   Item.create(
     [
       {
-        name: "grapefruit shirt",
+        name: "grapefruit shirt1",
         image: "https://i.etsystatic.com/24575487/r/il/980ee4/3787641689/il_794xN.3787641689_hhyr.jpg",
         sku: 121318,
         color: "pink",
@@ -141,7 +141,7 @@ app.get("/items/seed", (req, res) => {
         inStock: true,
       },
       {
-        name: "grapefruit mug",
+        name: "grapefruit mug1",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnSBZ0bWQgCtJpW8bTviXOcZKejPc6VFHuTQ&usqp=CAU",
         sku: 121319,
         color: "pink",
@@ -151,7 +151,7 @@ app.get("/items/seed", (req, res) => {
         inStock: true,
       },
       {
-        name: "Basketball",
+        name: "Basketball1",
         image: "https://cdn.pixabay.com/photo/2013/07/13/09/46/basketball-155997__340.png",
         sku: 121318,
         color: "Orange",
