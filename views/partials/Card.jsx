@@ -25,9 +25,9 @@ class Card extends React.Component {
         <br />
         Price: ${item.price}
         <br />
-        In Stock: {item.inStock ? `Yes` : `No`}
+        {/* In Stock: {item.inStock ? `Yes` : `No`} */}
         <br />
-        {item.quantity > 0 ? (
+        {((item.quantity > 0) && (item.inStock == true)) ? (
           //<button><a href={``}>Buy</a></button>
           <form action={`/items/${item.id}/update?_method=PUT`} method="POST">
             <input

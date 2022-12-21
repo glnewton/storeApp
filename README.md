@@ -8,56 +8,27 @@ This is a Node/Express backend-application that allows users to create and track
 
 [Live Site](https://tienda-del-amazonas.onrender.com/)
 
+## Project Requirements
+
 [Requirements](./docs/Requirements.txt)
-
-![Example 1 - Show Page](./docs/sampleMatrix.jpg)
-
-![Example 2 - Index Page](./docs/sampleMatrix.jpg)
-
-[Timeline](doc/ProjectBreakdown.md)
-
-## Requirements
-
-- [ ] *MVP* - Minimum Viable Product Your App Must Posess All 7 RESTful Routes
-- [ ] *Index Page*: Your app should have an index page where
-    - all the products are displayed
-    - the images link to the product's show page
-    - and there should be a link to add a new product.
-- [ ] *Show Page*: Your show page should display a product with
-    - a link back to the products
-    - a link to edit the product (goes to the edit page)
-    - a delete button that deletes
-    - If the quantity of your item is zero, the show page should say 'OUT OF STOCK' instead of saying how many are remaining. (Hint: conditionals in jsx).
-    - On the edit page, make sure you can set the quantity to zero if you want so that you can test if this is working.
-    - The BUY button should also not be rendered if the quantity of the item is zero
-- [ ] *New  Page*:
-    - Render forms and submit to the appropriate routes.
-- [ ] *Edit  Page*:
-    - Render forms and submit to the appropriate routes.
-- [ ] *Redirects*
-    - The create route should redirect to the index
-    - The delete route should redirect to the index
-    - The update route will redirect back to the product's show page.
-- [ ] Technical Requirements:
-    - Your app MUST run without syntax errors. If there are errors you can't solve, comment them out and leave a comment above explaining what is wrong
-    - Must contain all 7 Restful Routes.
-    - Must be styled and look like a store.
-    - You MUST have a well documented README file in your repo. PLEASE add this README.md file on your own NOT through GitHub... Trust me...  
-    - In lieu of presentations, you MUST create a video (on YouTube, Vimeo, etc...) of you showcasing your application and code. This video needs to be in your README file, and must be at least 3 minutes long.
 
 ## Screenshots
 
-![Gameplay Screenshot 1](./images/gamePlayScreenshot1.jpg)
+![Home Page](./docs/sampleMatrix.jpg)
 
-![Gameplay Screenshot 2](./images/gamePlayScreenshot2.jpg)
+![Inventory Page (Index Page)](./docs/sampleMatrix.jpg)
 
-![Desktop View Screenshot 1](./docs/desktopView.jpg)
+![Item Detail Page (Show Page)](./docs/sampleMatrix.jpg)
 
-![Mobile View Screenshot 1](./docs/mobileView.png)
+![Update Item Page (Edit Page)](./docs/sampleMatrix.jpg)
+
+![Create Item Page (New Page)](./docs/sampleMatrix.jpg)
+
+![Error Page (Error Page)](./docs/sampleMatrix.jpg)
 
 ## Build Status
 
-Project is a statically deployed via Render and is connected to the GitHub Repository to redploy on new commits/pushes.
+Project is a hosted and deployed via Render and is connected to the GitHub Repository to redploy on new commits/pushes.
 
 ## Code Style
 
@@ -67,56 +38,118 @@ Elements of both functional programming and object-oriented programming are used
 
 Color Palette from: https://coolors.co/104547-4b5358-25b5af-727072-af929d
 
-## Technologies, Language Features & Libraries Used
+## Technologies, Languages, Libraries & Platforms Used
 
 - HTML
 - CSS
+    - CSS Library: Bootstrap (buttons mainly)
 - JavaScript
-- CSS Library: Bootstrap (buttons mainly)
-- JS Features: 
-    - Classes
-    - Modules
+- NodeJS
+- ExpressJS
+    - JSX
+- MongoDB (Cloud NoSQL Database)
+- Render (IaaS Platform)
 
 ## Features
 
-1. Built with HTML, CSS and JavaScript
-2. DOM-based 
-3. Hosted on GitHub Pages
+1. Users can performa basic CRUD operations for items in the store via a simple user-interface.
+2. All changes persist whether local or on the deployed site.
 
-## Project Structure
+## Project Directory 
+
+`
+
+project/
+├── server.js
+├── package.json
+├── package-lock.json
+├── README.md
+├── docs/
+├── database/
+│   ├── dbConnection.js
+│   ├── models/
+│   └── item.js
+├── public/
+│   ├── images/
+│   ├── stylesheets/
+│   └── style.css
+├── routes/
+│   └── home.js
+└── views/
+    ├── pages/
+    ├── partials/
+    │   ├── Card.jsx
+    │   ├── EditForm.jsx
+    │   ├── Footer.jsx
+    │   ├── Header.jsx
+    │   └── NewForm.jsx
+    ├── Default.jsx
+    ├── Edit.jsx
+    ├── Error.jsx
+    ├── Home.jsx
+    ├── Index.jsx
+    ├── New.jsx
+    └── Show.jsx
+
+`
+### Files & Directories
+
+- server.js - the main file for the express app, where the express app is created and the middleware and routes are set up
+- package.json - lists the packages (including express) that the project depends on, as well as scripts for running the app and testing
+- package-lock.json - records the exact versions of package dependencies that were installed
+- README.md - a file containing information about the project, including instructions for how to set it up and use it. This file is often displayed on the project's homepage on GitHub.
+- public/ - contains static assets such as images, JavaScript files, and CSS stylesheets
+- routes/ - contains the route handlers for the app, which define the behavior for each URL endpoint
+- views/ - contains the template files for the views rendered by the app, written in JSX 
+- views/partials/ - contains partial template files that can be included in other views
+- database/ - contains the code for connecting to and interacting with the database. 
+- dbConnection.js - exports the code for connecting to and interacting with the database.
+- database/models/ - This directory contain files for setting up the database schema and defining models for interacting with the data in MongoDB via Mongoose
+- docs/ - contains documentation files for the project, iscreenshots, requirements and other files used by the developer such as an API reference or user guide.
 
 ## Routes
 
-|      URL      |   HTTP Verb   |     Action    |   Notes & Examples  |
+|      URL      |   HTTP Verb   |     Action    |   Notes & Examples  | 
 | ------------- | ------------- | ------------- | ------------- |
-| /products/    |      GET      |	  index	    |   INDEX when a user types localhost:3000/products in browser this route shows a list or index of all products |
-| /products/new	|      GET	    |      new	    |   NEW when a user types localhost:3000/products/new in browser this route shows the user a form to create a NEW fruit | 
-| /products/:id	|     DELETE	|    destroy	|   DELETE initiates a delete request through a form submission with action = http://localhost:3000/products/:idOfProductand allows the application the ability to delete a product |
-| /products/:id	|      PUT	    |     update	|   UPDATE initiates a put request through a form submission with action = http://localhost:3000/products/:idOfProductand allows the application the ability to Update data about a product |
-| /products	    |      POST	    |     create	|   CREATE initiates a post request through a form submission with action = http://localhost:3000/products/and allows the application the ability to Createa product |
-| /products/:id/edit | 	    GET	|      edit	    |   EDIT when a user types localhost:3000/products/:idOfProduct/edit in browser shows the user a form to edit a product |
-| /products/:id	|      GET	    |      show	    |   SHOW when a user types localhost:3000/products/:idOfProductshows the user an Individual fruit in the browser |
+|      /            |      GET      |	  Home	    |   Home Route - Returns the home page when a user types http://localhost:3000/ in browser this route shows a simple welcome page. |
+|    /items/        |      GET      |	  Index	    |   INDEX Route - Returns the inventory page when a user types http://localhost:3000/items in the browser this route shows a list or index of all items |
+| /items/new	    |      GET	    |      New	    |   NEW Route - Returns the new item page when a user types http://localhost:3000/items/new in browser this route shows the user a form to create a NEW item | 
+| /items/:id/delete |     DELETE	|     Delete	|   DELETE Route - initiates a DELETE request through a form submission with action = http://localhost:3000/items/:id/delete and allows the application the ability to delete a item |
+| /items/:id/update	|      PUT	    |     Update	|   UPDATE Route - initiates a PUT request through a form submission with action = http://localhost:3000/items/:id/update and allows the application the ability to Update data about a item |
+| /items/create	    |      POST	    |     Create	|   CREATE Route - initiates a POST request through a form submission with action = http://localhost:3000/items/create and allows the application the ability to Create a item |
+| /items/:id/edit   | 	    GET	    |      Edit	    |   EDIT Route - Returns the edit item page when a user types http://localhost:3000/items/:id/edit in browser shows the user a form to edit a item |
+| /items/:id	     |      GET	    |      Show	    |   SHOW Route - Returns the show  item page when a user types http://localhost:3000/items/:id shows the user an individual item in the browser |
 
 
 ## Installation Instructions
 
-**Step 1: Clone (or fork) the repository**
+**Step 1: Clone the repository**
 
 Run the following code in your terminal to download the code:
 
-`git clone https://github.com/glnewton/word-puzzle.git`
+`git clone https://github.com/glnewton/storeApp.git`
 
 ![Installation Screenshot 1](./docs/installation1.jpg)
 
-**Step 2: Run NPM Install to install necessary packages**
+**Step 2: Install Dependencies**
+
+`npm install`
 
 ![Installation Screenshot 2](./docs/installation2.jpg)
 
-**Step 3: Run NPM Start to locally run the start scripts fo CRA (Create-React-App)**
+**Step 3: Configure the application**
+
+Create the .env file and the appropriate local or cloud database.
+
+**Step 4: Start the application**
+
+`npm start`
 
 ![Installation Screenshot 3](./docs/installation3.jpg)
 
 ![Installation Screenshot 4](./docs/installation4.jpg)
+
+The app will now be running at http://localhost:3000. 
 
 ## App Mechanics:
 
@@ -127,11 +160,6 @@ Run the following code in your terminal to download the code:
 5. Exit Game
 6. Play Again
 
-## Additional Features
-
-- Responsive mobile design
-- Animation(s)
-    - Flashing Background Color
 
 ## Known Issues:
 
@@ -153,7 +181,7 @@ PARROT is not found in the array. I believe it was a translation error as LORO i
     5. Health Bar
 - Refactor with TypeScript
 
-## Acknowledgements
+## Acknowledgements & ## Resources
 
 - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs
 
@@ -172,10 +200,6 @@ PARROT is not found in the array. I believe it was a translation error as LORO i
 ## Disclaimer
 
 I am not affliated with any of the above and all work used is for educational and demonstration purposes only. No profit is generated from this project.
-
-## Resources
-
-- https://medium.com/@meakaakka/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3
 
 ## License
 

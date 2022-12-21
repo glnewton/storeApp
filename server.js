@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const methodOverride = require("method-override");
 
-const indexRouter = require("./routes/index");
+const homeRouter = require("./routes/home");
 // const itemsRouter = require("./routes/itemsRoutes");
 
 const Item = require("./models/item.js");
@@ -18,12 +18,10 @@ const Item = require("./models/item.js");
 const PORT = process.env.PORT || 3000;
 
 // Establish Database Connection
-
 const db = require('./database/dbConnection');
 db.dbConnection();
 
 // Express Configuration
-
 const app = express();
 
 // View Engine Configuration --  Configure the app (app.set)
@@ -40,21 +38,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride("_method"));         // override for put and delete requests from forms
 app.use(express.urlencoded({ extended: false }));
-//app.use(express.static("public")); // serve files from public statically
-//app.use('/public', express.static('public')) 
-// app.use(express.static(path.join(__dirname, "public")));  // Keep?
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public')) // serve files from public statically
 
 
 ////////////////////////////////////////////
 // Routes Configuration - Mount Routes 
 ////////////////////////////////////////////
-// Home/Root/Index Route
 
-app.use("/", indexRouter);
 
+app.use("/", homeRouter);   // Home/Root/Index Route
 //app.use("/items", indexRouter); // Add items routes to middleware chain.
-
 
 // Index = Show all records
 app.get('/items', (req, res) => {
@@ -79,7 +72,6 @@ app.put("/items/:id/update", (req, res) => {
     } else {
       req.body.inStock = false;
     }
-
     if (req.body.quantity === "BUY"){
       Item.findByIdAndUpdate(req.params.id, { $inc: { "quantity": -1 } }, (err, updatedItem) => {
           res.redirect(`/items/${req.params.id}`) // redirecting to the Show page
@@ -171,25 +163,25 @@ app.get("/items/seed", (req, res) => {
 // Error Handling Configuration
 //////////////////////////////////////////////
 
-//catch 404 and forward to error handler
+//Catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
 });
 
-// error handler
+//Error handler
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
-  // render the error page
+  // Render the error page
   res.status(err.status || 500);
   res.render("error");
 });
 
-
 //////////////////////////////////////////////
 // Server Listener
 //////////////////////////////////////////////
+
 app.listen(PORT, () => {
   console.log("listening");
 });
