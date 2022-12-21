@@ -12,6 +12,10 @@ This is a Node/Express backend-application that allows users to create and track
 
 [Requirements](./docs/Requirements.md)
 
+## Demo Presentation
+
+[Recorded Demo](./docs/Requirements.md)
+
 ## Screenshots
 
 ![Home Page](./docs/homePage.jpg)
@@ -125,25 +129,29 @@ Run the following code in your terminal to download the code:
 
 `git clone https://github.com/glnewton/storeApp.git`
 
-![Installation Screenshot 1](./docs/installation1.jpg)
+![Installation Screenshot 1](./docs/installationStep1.jpg)
 
 **Step 2: Install Dependencies**
 
+`cd storeApp`
+
 `npm install`
 
-![Installation Screenshot 2](./docs/installation2.jpg)
+![Installation Screenshot 2](./docs/installationStep2.jpg)
 
 **Step 3: Configure the application**
 
 Create the .env file and the appropriate local or cloud database.
 
+![Installation Screenshot 3](./docs/installationStep3-1.jpg)
+
+![Installation Screenshot 3](./docs/installationStep3-2.jpg)
+
 **Step 4: Start the application**
 
 `npm start`
 
-![Installation Screenshot 3](./docs/installation3.jpg)
-
-![Installation Screenshot 4](./docs/installation4.jpg)
+![Installation Screenshot 4](./docs/installationStep4.jpg)
 
 The app will now be running at <http://localhost:3000>.
 
