@@ -14,7 +14,9 @@ This is a Node/Express backend-application that allows users to create and track
 
 ## Demo Presentation
 
-[Recorded Demo](./docs/demoPresentation.mp4)
+[Recorded Demo File](./docs/demoPresentation.mp4)
+
+[Link to Google Photos](https://photos.app.goo.gl/k7a9RPmQf98eFFC3A)
 
 ## Screenshots
 
