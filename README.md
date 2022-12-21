@@ -10,21 +10,21 @@ This is a Node/Express backend-application that allows users to create and track
 
 ## Project Requirements
 
-[Requirements](./docs/Requirements.txt)
+[Requirements](./docs/Requirements.md)
 
 ## Screenshots
 
-![Home Page](./docs/sampleMatrix.jpg)
+![Home Page](./docs/homePage.jpg)
 
-![Inventory Page (Index Page)](./docs/sampleMatrix.jpg)
+![Inventory Page (Index Page)](./docs/inventoryPage.jpg)
 
-![Item Detail Page (Show Page)](./docs/sampleMatrix.jpg)
+![Item Detail Page (Show Page)](./docs/itemDetailPage.jpg)
 
-![Update Item Page (Edit Page)](./docs/sampleMatrix.jpg)
+![Update Item Page (Edit Page)](./docs/updateItemPage.jpg)
 
-![Create Item Page (New Page)](./docs/sampleMatrix.jpg)
+![Create Item Page (New Page)](./docs/createItemPage.jpg)
 
-![Error Page (Error Page)](./docs/sampleMatrix.jpg)
+![Error Page (Error Page)](./docs/errorPage.jpg)
 
 ## Build Status
 
@@ -36,17 +36,17 @@ Elements of both functional programming and object-oriented programming are used
 
 ## Design
 
-Color Palette from: https://coolors.co/104547-4b5358-25b5af-727072-af929d
+Color Palette from: <https://coolors.co/104547-4b5358-25b5af-727072-af929d>
 
 ## Technologies, Languages, Libraries & Platforms Used
 
 - HTML
 - CSS
-    - CSS Library: Bootstrap (buttons mainly)
+  - CSS Library: Bootstrap (buttons mainly)
 - JavaScript
 - NodeJS
 - ExpressJS
-    - JSX
+  - JSX
 - MongoDB (Cloud NoSQL Database)
 - Render (IaaS Platform)
 
@@ -55,7 +55,7 @@ Color Palette from: https://coolors.co/104547-4b5358-25b5af-727072-af929d
 1. Users can performa basic CRUD operations for items in the store via a simple user-interface.
 2. All changes persist whether local or on the deployed site.
 
-## Project Directory 
+## Project Directory
 
 `project/
 ├── server.js
@@ -64,31 +64,30 @@ Color Palette from: https://coolors.co/104547-4b5358-25b5af-727072-af929d
 ├── README.md
 ├── docs/
 ├── database/
-│   ├── dbConnection.js
-│   ├── models/
-│   └── item.js
+│ ├── dbConnection.js
+│ ├── models/
+│ └── item.js
 ├── public/
-│   ├── images/
-│   ├── stylesheets/
-│   └── style.css
+│ ├── images/
+│ ├── stylesheets/
+│ └── style.css
 ├── routes/
-│   └── home.js
+│ └── home.js
 └── views/
-    ├── pages/
-    ├── partials/
-    │   ├── Card.jsx
-    │   ├── EditForm.jsx
-    │   ├── Footer.jsx
-    │   ├── Header.jsx
-    │   └── NewForm.jsx
-    ├── Default.jsx
-    ├── Edit.jsx
-    ├── Error.jsx
-    ├── Home.jsx
-    ├── Index.jsx
-    ├── New.jsx
-    └── Show.jsx
-`
+├── pages/
+├── partials/
+│ ├── Card.jsx
+│ ├── EditForm.jsx
+│ ├── Footer.jsx
+│ ├── Header.jsx
+│ └── NewForm.jsx
+├── Default.jsx
+├── Edit.jsx
+├── Error.jsx
+├── Home.jsx
+├── Index.jsx
+├── New.jsx
+└── Show.jsx`
 
 ### Files & Directories
 
@@ -98,26 +97,25 @@ Color Palette from: https://coolors.co/104547-4b5358-25b5af-727072-af929d
 - README.md - a file containing information about the project, including instructions for how to set it up and use it. This file is often displayed on the project's homepage on GitHub.
 - public/ - contains static assets such as images, JavaScript files, and CSS stylesheets
 - routes/ - contains the route handlers for the app, which define the behavior for each URL endpoint
-- views/ - contains the template files for the views rendered by the app, written in JSX 
+- views/ - contains the template files for the views rendered by the app, written in JSX
 - views/partials/ - contains partial template files that can be included in other views
-- database/ - contains the code for connecting to and interacting with the database. 
+- database/ - contains the code for connecting to and interacting with the database.
 - dbConnection.js - exports the code for connecting to and interacting with the database.
 - database/models/ - This directory contain files for setting up the database schema and defining models for interacting with the data in MongoDB via Mongoose
 - docs/ - contains documentation files for the project, iscreenshots, requirements and other files used by the developer such as an API reference or user guide.
 
 ## Routes
 
-|      URL      |   HTTP Verb   |     Action    |   Notes & Examples  | 
-| ------------- | ------------- | ------------- | ------------- |
-|      /            |      GET      |	  Home	    |   Home Route - Returns the home page when a user types http://localhost:3000/ in browser this route shows a simple welcome page. |
-|    /items/        |      GET      |	  Index	    |   INDEX Route - Returns the inventory page when a user types http://localhost:3000/items in the browser this route shows a list or index of all items |
-| /items/new	    |      GET	    |      New	    |   NEW Route - Returns the new item page when a user types http://localhost:3000/items/new in browser this route shows the user a form to create a NEW item | 
-| /items/:id/delete |     DELETE	|     Delete	|   DELETE Route - initiates a DELETE request through a form submission with action = http://localhost:3000/items/:id/delete and allows the application the ability to delete a item |
-| /items/:id/update	|      PUT	    |     Update	|   UPDATE Route - initiates a PUT request through a form submission with action = http://localhost:3000/items/:id/update and allows the application the ability to Update data about a item |
-| /items/create	    |      POST	    |     Create	|   CREATE Route - initiates a POST request through a form submission with action = http://localhost:3000/items/create and allows the application the ability to Create a item |
-| /items/:id/edit   | 	    GET	    |      Edit	    |   EDIT Route - Returns the edit item page when a user types http://localhost:3000/items/:id/edit in browser shows the user a form to edit a item |
-| /items/:id	     |      GET	    |      Show	    |   SHOW Route - Returns the show  item page when a user types http://localhost:3000/items/:id shows the user an individual item in the browser |
-
+| URL               | HTTP Verb | Action | Notes & Examples                                                                                                                                                                         |
+| ----------------- | --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| /                 | GET       | Home   | Home Route - Returns the home page when a user types <http://localhost:3000/> in browser this route shows a simple welcome page.                                                           |
+| /items/           | GET       | Index  | INDEX Route - Returns the inventory page when a user types <http://localhost:3000/items> in the browser this route shows a list or index of all items                                      |
+| /items/new        | GET       | New    | NEW Route - Returns the new item page when a user types <http://localhost:3000/items/new> in browser this route shows the user a form to create a NEW item                                 |
+| /items/:id/delete | DELETE    | Delete | DELETE Route - initiates a DELETE request through a form submission with action = <http://localhost:3000/items/:id/delete> and allows the application the ability to delete a item         |
+| /items/:id/update | PUT       | Update | UPDATE Route - initiates a PUT request through a form submission with action = <http://localhost:3000/items/:id/update> and allows the application the ability to Update data about a item |
+| /items/create     | POST      | Create | CREATE Route - initiates a POST request through a form submission with action = <http://localhost:3000/items/create> and allows the application the ability to Create a item               |
+| /items/:id/edit   | GET       | Edit   | EDIT Route - Returns the edit item page when a user types <http://localhost:3000/items/:id/edit> in browser shows the user a form to edit a item                                           |
+| /items/:id        | GET       | Show   | SHOW Route - Returns the show item page when a user types <http://localhost:3000/items/:id> shows the user an individual item in the browser                                               |
 
 ## Installation Instructions
 
@@ -147,9 +145,9 @@ Create the .env file and the appropriate local or cloud database.
 
 ![Installation Screenshot 4](./docs/installation4.jpg)
 
-The app will now be running at http://localhost:3000. 
+The app will now be running at <http://localhost:3000>.
 
-## App Mechanics:
+## App Mechanics
 
 1. Two Players (User vs PC )
 2. Win State
@@ -158,36 +156,35 @@ The app will now be running at http://localhost:3000.
 5. Exit Game
 6. Play Again
 
-
-## Known Issues:
+## Known Issues
 
 - Edge case that errors exist on some diagonal searches for partial words (matrix out of bounds error?).
 - I give the position of the start of the word, but is the position of the matrix and submatrix (X is the sub matrix (row) and starts from zero in the upper left hand corner. Y is the position in the row starting at zero from the left.)
 - I do not yet cite the end position of the word
 - Clicking Reset Board generates a random array and it can be searched ONCE. It then defaults back to the given array imported via the data.js file
-PARROT is not found in the array. I believe it was a translation error as LORO is found and is the masculine translation of PARROT.
+  PARROT is not found in the array. I believe it was a translation error as LORO is found and is the masculine translation of PARROT.
 
 ## Roadmap
 
 - Add modal introduction and ending
 - Add speed, weakness, and special attack to creatures
 - Add additional animations
-    1. Fade In/Out
-    2. Border Flashing
-    3. Shaking Image
-    4. Screen Dimming
-    5. Health Bar
+  1. Fade In/Out
+  2. Border Flashing
+  3. Shaking Image
+  4. Screen Dimming
+  5. Health Bar
 - Refactor with TypeScript
 
 ## Acknowledgements & ## Resources
 
-- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs
+- <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs>
 
-- https://github.com/mdn/express-locallibrary-tutorial
+- <https://github.com/mdn/express-locallibrary-tutorial>
 
-- https://github.com/Viveckh/Veniqa
+- <https://github.com/Viveckh/Veniqa>
 
-- https://github.com/KasperKain/PerScholas-Fruits
+- <https://github.com/KasperKain/PerScholas-Fruits>
 
 - To Cycle 28
 
