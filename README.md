@@ -24,7 +24,7 @@ This is a Node/Express backend-application that allows users to create and track
 
 ![Create Item Page (New Page)](./docs/createItemPage.jpg)
 
-![Error Page (Error Page)](./docs/errorPage.jpg)
+![Error Page (Error Page)](./docs/localErrorPage.jpg)
 
 ## Build Status
 
@@ -147,50 +147,40 @@ Create the .env file and the appropriate local or cloud database.
 
 The app will now be running at <http://localhost:3000>.
 
-## App Mechanics
+## Store Functionality
 
-1. Two Players (User vs PC )
-2. Win State
-3. Lose State
-4. Multiple Rounds
-5. Exit Game
-6. Play Again
+1. Users can performa basic CRUD operations for items in the store via a simple user-interface.
+2. All changes persist whether local or on the deployed site.
 
 ## Known Issues
 
-- Edge case that errors exist on some diagonal searches for partial words (matrix out of bounds error?).
-- I give the position of the start of the word, but is the position of the matrix and submatrix (X is the sub matrix (row) and starts from zero in the upper left hand corner. Y is the position in the row starting at zero from the left.)
-- I do not yet cite the end position of the word
-- Clicking Reset Board generates a random array and it can be searched ONCE. It then defaults back to the given array imported via the data.js file
-  PARROT is not found in the array. I believe it was a translation error as LORO is found and is the masculine translation of PARROT.
+- Error page renders locally, but not on the hosted page.
+- File tree does not display correctly in README.md
+- Numerous CSS Issues
+  - Page Header is often not displayed on most pages
+- Some directories and files were kept but not used.
+- Separate routing and controller files was not fully implemented
+- Documentation is incomplete
+- Try/Catch error handling was not fully implemented
+- Unable to successfully seed database without errors
 
 ## Roadmap
 
-- Add modal introduction and ending
-- Add speed, weakness, and special attack to creatures
-- Add additional animations
-  1. Fade In/Out
-  2. Border Flashing
-  3. Shaking Image
-  4. Screen Dimming
-  5. Health Bar
+- Address the above issues
 - Refactor with TypeScript
 
-## Acknowledgements & ## Resources
-
-- <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs>
-
-- <https://github.com/mdn/express-locallibrary-tutorial>
-
-- <https://github.com/Viveckh/Veniqa>
-
-- <https://github.com/KasperKain/PerScholas-Fruits>
+## Acknowledgements  
 
 - To Cycle 28
-
 - To the apprentices
-
 - To G,T,K,M et al
+
+## Resources
+
+- <https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs>
+- <https://github.com/mdn/express-locallibrary-tutorial>
+- <https://github.com/Viveckh/Veniqa>
+- <https://github.com/KasperKain/PerScholas-Fruits>
 
 ## Disclaimer
 
