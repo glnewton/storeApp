@@ -21,8 +21,8 @@
   - [X] The delete route should redirect to the index
   - [X] The update route will redirect back to the product's show page.
 - [X] Technical Requirements:
-  - [ ] Your app MUST run without syntax errors. If there are errors you can't solve, comment them out and leave a comment above explaining what is wrong
+  - [X] Your app MUST run without syntax errors. If there are errors you can't solve, comment them out and leave a comment above explaining what is wrong
   - [X] Must contain all 7 Restful Routes.
   - [X] Must be styled and look like a store.
-  - [ ] You MUST have a well documented README file in your repo. PLEASE add this README.md file on your own NOT through GitHub... Trust me...  
-  - [ ] In lieu of presentations, you MUST create a video (on YouTube, Vimeo, etc...) of you showcasing your application and code. This video needs to be in your README file, and must be at least 3 minutes long.
+  - [X] You MUST have a well documented README file in your repo. PLEASE add this README.md file on your own NOT through GitHub... Trust me...  
+  - [X] In lieu of presentations, you MUST create a video (on YouTube, Vimeo, etc...) of you showcasing your application and code. This video needs to be in your README file, and must be at least 3 minutes long.
