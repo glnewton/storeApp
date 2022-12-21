@@ -1,28 +1,28 @@
-## Requirements
+## Requirements ##
 
 - [X] *MVP* - Minimum Viable Product Your App Must Posess All 7 RESTful Routes
 - [X] *Index Page*: Your app should have an index page where
-    - [X] all the products are displayed
-    - [X] the images link to the product's show page
-    - [X] and there should be a link to add a new product.
+  - [X] all the products are displayed
+  - [X] the images link to the product's show page
+  - [X] and there should be a link to add a new product.
 - [X] *Show Page*: Your show page should display a product with
-    - [X] a link back to the products
-    - [X] a link to edit the product (goes to the edit page)
-    - [X] a delete button that deletes
-    - [X] If the quantity of your item is zero, the show page should say 'OUT OF STOCK' instead of saying how many are remaining. (Hint: conditionals in jsx).
-    - [X] On the edit page, make sure you can set the quantity to zero if you want so that you can test if this is working.
-    - [X] The BUY button should also not be rendered if the quantity of the item is zero
+  - [X] a link back to the products
+  - [X] a link to edit the product (goes to the edit page)
+  - [X] a delete button that deletes
+  - [X] If the quantity of your item is zero, the show page should say 'OUT OF STOCK' instead of saying how many are remaining. (Hint: conditionals in jsx).
+  - [X] On the edit page, make sure you can set the quantity to zero if you want so that you can test if this is working.
+  - [X] The BUY button should also not be rendered if the quantity of the item is zero
 - [X] *New  Page*:
-    - [X] Render forms and submit to the appropriate routes.
+  - [X] Render forms and submit to the appropriate routes.
 - [X] *Edit  Page*:
-    - [X] Render forms and submit to the appropriate routes.
+  - [X] Render forms and submit to the appropriate routes.
 - [X] *Redirects*
-    - [X] The create route should redirect to the index
-    - [X] The delete route should redirect to the index
-    - [X] The update route will redirect back to the product's show page.
+  - [X] The create route should redirect to the index
+  - [X] The delete route should redirect to the index
+  - [X] The update route will redirect back to the product's show page.
 - [X] Technical Requirements:
-    - [ ] Your app MUST run without syntax errors. If there are errors you can't solve, comment them out and leave a comment above explaining what is wrong
-    - [X] Must contain all 7 Restful Routes.
-    - [X] Must be styled and look like a store.
-    - [ ] You MUST have a well documented README file in your repo. PLEASE add this README.md file on your own NOT through GitHub... Trust me...  
-    - [ ] In lieu of presentations, you MUST create a video (on YouTube, Vimeo, etc...) of you showcasing your application and code. This video needs to be in your README file, and must be at least 3 minutes long.
+  - [ ] Your app MUST run without syntax errors. If there are errors you can't solve, comment them out and leave a comment above explaining what is wrong
+  - [X] Must contain all 7 Restful Routes.
+  - [X] Must be styled and look like a store.
+  - [ ] You MUST have a well documented README file in your repo. PLEASE add this README.md file on your own NOT through GitHub... Trust me...  
+  - [ ] In lieu of presentations, you MUST create a video (on YouTube, Vimeo, etc...) of you showcasing your application and code. This video needs to be in your README file, and must be at least 3 minutes long.
