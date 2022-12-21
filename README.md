@@ -14,7 +14,7 @@ This is a Node/Express backend-application that allows users to create and track
 
 ## Demo Presentation
 
-[Recorded Demo](./docs/Requirements.md)
+[Recorded Demo](./docs/demoPresentation.mp4)
 
 ## Screenshots
 
