@@ -57,9 +57,7 @@ Color Palette from: https://coolors.co/104547-4b5358-25b5af-727072-af929d
 
 ## Project Directory 
 
-`
-
-project/
+`project/
 ├── server.js
 ├── package.json
 ├── package-lock.json
@@ -90,8 +88,8 @@ project/
     ├── Index.jsx
     ├── New.jsx
     └── Show.jsx
-
 `
+
 ### Files & Directories
 
 - server.js - the main file for the express app, where the express app is created and the middleware and routes are set up
