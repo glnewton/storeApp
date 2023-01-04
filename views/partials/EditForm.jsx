@@ -16,7 +16,7 @@ class EditForm extends React.Component{
                     Description: <input type="text" name="description"  defaultValue={item.description}/><br/>
                     Quantity: <input type="text" name="quantity"  defaultValue={item.quantity}/><br/>
                     Price: <input type="text" name="price"  defaultValue={item.price}/><br/>
-                    In Stock:{ item.inStock? <input type="checkbox" name="inStock" defaultChecked />: <input type="checkbox" name="inStock"/> }<br/>
+                    {/* In Stock:{ item.inStock? <input type="checkbox" name="inStock" defaultChecked />: <input type="checkbox" name="inStock"/> }<br/> */}
                     <input type="submit" value="Submit Changes"/>
                 </form>         
             </div>

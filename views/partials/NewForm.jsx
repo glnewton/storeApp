@@ -14,7 +14,7 @@ class NewForm extends React.Component{
                     Description: <input type="text" name="description" /><br/>
                     Quantity: <input type="text" name="quantity" /><br/>
                     Price: <input type="text" name="price" /><br/>
-                    In Stock: <input type="checkbox" name="inStock" defaultChecked /><br/>
+                    {/* In Stock: <input type="checkbox" name="inStock" defaultChecked /><br/> */}
                     <input type="submit" name="" value="Create Item"/>
                 </form>
             </div>
